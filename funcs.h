@@ -1,3 +1,5 @@
 #pragma once
 
-// add prototypes here
+#include "coord3d.h"
+
+double length(Coord3D *p);
