@@ -11,3 +11,25 @@ double length(Coord3D *p)
 	sum += pow(p->z,2);
 	return sqrt(sum);
 }
+
+Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2)
+{
+	double first = length(p1);
+	double second = length(p2);
+	
+	if (first > second)
+	{
+		return p1;
+	}
+	else
+	{
+		return p2;
+	}
+}
+
+void move(Coord3D *ppos, Coord3D *pvel, double dt)
+{
+	ppos->x = ppos->x + pvel->x * dt;
+	ppos->y = ppos->y + pvel->y * dt;
+	ppos->z = ppos->z + pvel->z * dt;
+}
